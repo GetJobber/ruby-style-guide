@@ -3190,7 +3190,7 @@ resource cleanup when possible.
 <sup>[[link](#hash-fetch)]</sup>
 
   ```Ruby
-  heroes = {:batman => 'Bruce Wayne', :superman => 'Clark Kent' }
+  heroes = {:batman => 'Bruce Wayne', :superman => 'Clark Kent'}
   # bad - if we make a mistake we might not spot it right away
   heroes[:batman] # => 'Bruce Wayne'
   heroes[:supermann] # => nil
@@ -3205,7 +3205,7 @@ resource cleanup when possible.
 <sup>[[link](#hash-fetch-defaults)]</sup>
 
   ```Ruby
-  batman = {:name => 'Bruce Wayne', :is_evil => false }
+  batman = {:name => 'Bruce Wayne', :is_evil => false}
 
   # bad - if we just use || operator with falsy value we won't get the expected result
   batman[:is_evil] || true # => true
