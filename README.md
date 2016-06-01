@@ -1923,6 +1923,7 @@ no parameters.
   than `Array` it will iterate the entire collection in order to determine its
   size. For ActiveRecordRelations it will *always* perform an SQL query,
   whereas size will not when the records are loaded.
+<sup>[[link](#count-vs-size)]</sup>
 
   ```Ruby
   # bad
