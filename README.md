@@ -249,7 +249,7 @@ Translations of the guide are available in the following languages:
 
   ```Ruby
   # bad
-  { :one => 1, :two => 2}
+  { :one => 1, :two => 2 }
 
   # good
   {:one => 1, :two => 2}
