@@ -3931,70 +3931,37 @@ resource cleanup when possible.
   Use common sense.
 <sup>[[link](#common-sense)]</sup>
 
-## Tools
+## Rails
+* <a name="prefer-update_attributes"></a>
+  Always prefer `update_attributes` to other rails `update_` methods.
+  The others have varying issues (`update_column` skips callbacks and
+  validation, `update_attribute` skips validations only etc.)
 
-Here are some tools to help you automatically check Ruby code against
-this guide.
+```Ruby
+# bad
+active_record_model.update_column(:column_name, val)
+active_record_model.update_attribute(:another_column, val)
 
-### RuboCop
+# good
+active_record_model.update_attributes(:column_name => val, :another_column => val)
+```
+Another valid option is direct assignment with `.save!` or `.save`
+```Ruby
+# bad
+active_record_model.update_column(:column_name, val)
 
-[RuboCop][] is a Ruby code style
-checker based on this style guide. RuboCop already covers a
-significant portion of the Guide, supports both MRI 1.9 and MRI 2.0
-and has good Emacs integration.
+# good
+active_record_model.column_name = val
+active_record_model.another_column = val
+active_record_model.save!
+```
+If you have a valid use case for one of the non-preferred methods, please leave a comment to explain why it's being used
+```Ruby
+# bad
+active_record_model.update_column(:column_name, val)
 
-### RubyMine
-
-[RubyMine](http://www.jetbrains.com/ruby/)'s code inspections are
-[partially based](http://confluence.jetbrains.com/display/RUBYDEV/RubyMine+Inspections)
-on this guide.
-
-# Contributing
-
-The guide is still a work in progress - some rules are lacking examples, some
-rules don't have examples that illustrate them clearly enough. Improving such rules
-is a great (and simple way) to help the Ruby community!
-
-In due time these issues will (hopefully) be addressed - just keep them in mind
-for now.
-
-Nothing written in this guide is set in stone. It's my desire to work
-together with everyone interested in Ruby coding style, so that we could
-ultimately create a resource that will be beneficial to the entire Ruby
-community.
-
-Feel free to open tickets or send pull requests with improvements. Thanks in
-advance for your help!
-
-You can also support the project (and RuboCop) with financial
-contributions via [Gratipay](https://gratipay.com/~bbatsov/).
-
-[![Support via Gratipay](https://cdn.rawgit.com/gratipay/gratipay-badge/2.3.0/dist/gratipay.png)](https://gratipay.com/~bbatsov/)
-
-## How to Contribute?
-
-It's easy, just follow the [contribution guidelines](https://github.com/bbatsov/ruby-style-guide/blob/master/CONTRIBUTING.md).
-
-# License
-
-![Creative Commons License](http://i.creativecommons.org/l/by/3.0/88x31.png)
-This work is licensed under a [Creative Commons Attribution 3.0 Unported License](http://creativecommons.org/licenses/by/3.0/deed.en_US)
-
-# Spread the Word
-
-A community-driven style guide is of little use to a community that
-doesn't know about its existence. Tweet about the guide, share it with
-your friends and colleagues. Every comment, suggestion or opinion we
-get makes the guide just a little bit better. And we want to have the
-best possible guide, don't we?
-
-Cheers,<br>
-[Bozhidar](https://twitter.com/bbatsov)
-
-[PEP-8]: https://www.python.org/dev/peps/pep-0008/
-[rails-style-guide]: https://github.com/bbatsov/rails-style-guide
-[pickaxe]: https://pragprog.com/book/ruby4/programming-ruby-1-9-2-0
-[trpl]: http://www.amazon.com/Ruby-Programming-Language-David-Flanagan/dp/0596516177
-[Pandoc]: http://pandoc.org/
-[RuboCop]: https://github.com/bbatsov/rubocop
-[rdoc]: http://rdoc.sourceforge.net/doc/
+# good
+# we need to skip callbacks to avoid an infinite loop
+active_record_model.update_column(:column_name, val)
+```
+<sup>[[link](#prefer-update_attributes)]</sup>
