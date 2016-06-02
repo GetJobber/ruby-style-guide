@@ -3955,4 +3955,13 @@ active_record_model.column_name = val
 active_record_model.another_column = val
 active_record_model.save!
 ```
+If you have a valid use case for one of the non-preferred methods, please leave a comment to explain why it's being used
+```Ruby
+# bad
+active_record_model.update_column(:column_name, val)
+
+# good
+# we need to skip callbacks to avoid an infinite loop
+active_record_model.update_column(:column_name, val)
+```
 <sup>[[link](#prefer-update_attributes)]</sup>
