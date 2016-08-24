@@ -3098,10 +3098,10 @@ resource cleanup when possible.
 
   ```Ruby
   # bad
-  hash = { 'one' => 1, 'two' => 2, 'three' => 3 }
+  hash = {'one' => 1, 'two' => 2, 'three' => 3}
 
   # good
-  hash = { one: 1, two: 2, three: 3 }
+  hash = {:one => 1, :two => 2, :three => 3}
   ```
 
 * <a name="no-mutable-keys"></a>
@@ -3109,29 +3109,15 @@ resource cleanup when possible.
 <sup>[[link](#no-mutable-keys)]</sup>
 
 * <a name="hash-literals"></a>
-  Use the Ruby 1.9 hash literal syntax when your hash keys are symbols.
+  Always use the old Hash Rocket ( => ) syntax
 <sup>[[link](#hash-literals)]</sup>
 
   ```Ruby
   # bad
-  hash = { :one => 1, :two => 2, :three => 3 }
+  hash = {one: 1, two: 2, three: 3}
 
   # good
-  hash = { one: 1, two: 2, three: 3 }
-  ```
-
-* <a name="no-mixed-hash-syntaces"></a>
-  Don't mix the Ruby 1.9 hash syntax with hash rockets in the same hash
-  literal. When you've got keys that are not symbols stick to the hash rockets
-  syntax.
-<sup>[[link](#no-mixed-hash-syntaces)]</sup>
-
-  ```Ruby
-  # bad
-  { a: 1, 'b' => 2 }
-
-  # good
-  { :a => 1, 'b' => 2 }
+  hash = {:one => 1, :two => 2, :three => 3}
   ```
 
 * <a name="hash-key"></a>
@@ -3173,7 +3159,7 @@ resource cleanup when possible.
 <sup>[[link](#hash-fetch)]</sup>
 
   ```Ruby
-  heroes = { batman: 'Bruce Wayne', superman: 'Clark Kent' }
+  heroes = {:batman => 'Bruce Wayne', :superman => 'Clark Kent'}
   # bad - if we make a mistake we might not spot it right away
   heroes[:batman] # => 'Bruce Wayne'
   heroes[:supermann] # => nil
@@ -3188,7 +3174,7 @@ resource cleanup when possible.
 <sup>[[link](#hash-fetch-defaults)]</sup>
 
   ```Ruby
-  batman = { name: 'Bruce Wayne', is_evil: false }
+  batman = {:name => 'Bruce Wayne', :is_evil => false}
 
   # bad - if we just use || operator with falsy value we won't get the expected result
   batman[:is_evil] || true # => true
@@ -3203,7 +3189,7 @@ resource cleanup when possible.
   <sup>[[link](#use-hash-blocks)]</sup>
 
   ```Ruby
-  batman = { name: 'Bruce Wayne' }
+  batman = {:name => 'Bruce Wayne'}
 
   # bad - if we use the default value, we eager evaluate it
   # so it can slow the program down if done multiple times
