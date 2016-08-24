@@ -207,18 +207,24 @@ By the way, if you're into Rails you might want to check out the complementary
   `{` and `}` deserve a bit of clarification, since they are used
   for block and hash literals, as well as string interpolation.
 
-  For hash literals two styles are considered acceptable.
-  The first variant is slightly more readable (and arguably more
-  popular in the Ruby community in general). The second variant has
-  the advantage of adding visual difference between block and hash
-  literals. Whichever one you pick - apply it consistently.
+  For hash literals never leave a space after `{` and before `}`.
+  This resuts in a simple visual indicator of what's a hash vs. a block.
 
   ```Ruby
-  # good - space after { and before }
-  { one: 1, two: 2 }
+  # bad
+  { :one => 1, :two => 2 }
 
-  # good - no space after { and before }
-  {one: 1, two: 2}
+  # good
+  {:one => 1, :two => 2}
+  ```
+
+  For blocks always leave a space after `{` and before `}`.
+  ```Ruby
+  # bad
+  link_to '/the_past', {render_something}
+
+  # good
+  link_to '/the_past', { render_something }
   ```
 
   With interpolated expressions, there should be no padded-spacing inside the braces.
