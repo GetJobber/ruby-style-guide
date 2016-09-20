@@ -3052,23 +3052,23 @@ resource cleanup when possible.
   ```
 
 * <a name="no-trailing-array-commas"></a>
-  Avoid comma after the last item of an `Array` or `Hash` literal, especially
-  when the items are not on separate lines.
+  Avoid comma after the last item of an `Array` or `Hash` literal, unless
+  the items are on separate lines.
 <sup>[[link](#no-trailing-array-commas)]</sup>
 
   ```Ruby
-  # bad - easier to move/add/remove items, but still not preferred
+  # bad - single line with trailing comma
+  VALUES = [1001, 2020, 3333, ]
+
+  # good
+  VALUES = [1001, 2020, 3333]
+
+  # good - easier to move/add/remove items
   VALUES = [
              1001,
              2020,
              3333,
            ]
-
-  # bad
-  VALUES = [1001, 2020, 3333, ]
-
-  # good
-  VALUES = [1001, 2020, 3333]
   ```
 
 * <a name="no-gappy-arrays"></a>
