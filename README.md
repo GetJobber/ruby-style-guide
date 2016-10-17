@@ -1877,7 +1877,8 @@ no parameters.
 * <a name="count-vs-size"></a>
   Don't use `count` as a substitute for `size`. For `Enumerable` objects other
   than `Array` it will iterate the entire collection in order to determine its
-  size.
+  size. For ActiveRecordRelations it will *always* perform an SQL query,
+  whereas size will not when the records are loaded.
 <sup>[[link](#count-vs-size)]</sup>
 
   ```Ruby
