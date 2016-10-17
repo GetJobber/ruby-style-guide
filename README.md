@@ -432,6 +432,7 @@ By the way, if you're into Rails you might want to check out the complementary
     When continuing a chained method invocation on another line,
     include the `.` on the first line to indicate that the
     expression continues.
+  <sup>[[link](#consistent-multi-line-chains)]</sup>
 
     ```Ruby
     # bad - need to read ahead to the second line to know that the chain continues
