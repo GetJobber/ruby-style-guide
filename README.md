@@ -3803,6 +3803,31 @@ resource cleanup when possible.
 
 ## Misc
 
+* <a name="prefer-safe-operator"></a>
+Prefer `&.` over `.try!` and both over `.try`.
+`&.` will fail for objects that don't respond to the message
+<sup>[[link](#prefer-safe-operator)]</sup>
+
+  ```ruby
+    # good
+    nil&.my_message
+    => nil
+
+    some_object&.my_message
+    => NoMethodError
+
+    # less bad
+    my_object.try!(:my_message)
+    => nil
+
+    # more bad
+    nil.try(:my_message)
+    => nil
+
+    my_object.try(:my_message)
+    => nil
+  ```
+
 * <a name="always-warn"></a>
   Write `ruby -w` safe code.
 <sup>[[link](#always-warn)]</sup>
