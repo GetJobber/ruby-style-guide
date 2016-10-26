@@ -3817,8 +3817,11 @@ Prefer `&.` over `.try!` and both over `.try`.
     => NoMethodError
 
     # less bad
-    my_object.try!(:my_message)
+    nil.try!(:my_message)
     => nil
+
+    nil.try!(:my_message)
+    => NoMethodError
 
     # more bad
     nil.try(:my_message)
