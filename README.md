@@ -3820,14 +3820,14 @@ Prefer `&.` over `.try!` and both over `.try`.
     nil.try!(:my_message)
     => nil
 
-    nil.try!(:my_message)
+    some_object.try!(:my_message)
     => NoMethodError
 
     # more bad
     nil.try(:my_message)
     => nil
 
-    my_object.try(:my_message)
+    some_object.try(:my_message)
     => nil
   ```
 
