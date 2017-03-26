@@ -3096,7 +3096,7 @@ resource cleanup when possible.
 <sup>[[link](#no-mutable-keys)]</sup>
 
 * <a name="hash-literals"></a>
-  Always use the old Hash Rocket ( => ) syntax
+  Always use the Hash Rocket ( => ) syntax
 <sup>[[link](#hash-literals)]</sup>
 
   ```Ruby
@@ -3108,20 +3108,20 @@ resource cleanup when possible.
   ```
 
 * <a name="hash-key"></a>
-  Use `Hash#key?` instead of `Hash#has_key?` and `Hash#value?` instead of
-  `Hash#has_value?`. As noted
-  [here](http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-core/43765) by
-  Matz, the longer forms are considered deprecated.
+  Use `Hash#has_key?` instead of `Hash#key?` and `Hash#has_value?` instead of
+  `Hash#value?`. As noted
+  [here](https://github.com/bbatsov/rubocop/issues/3224) by
+  Matz, the longer forms are okay through at least rails 3.
 <sup>[[link](#hash-key)]</sup>
 
   ```Ruby
   # bad
-  hash.has_key?(:test)
-  hash.has_value?(value)
-
-  # good
   hash.key?(:test)
   hash.value?(value)
+
+  # good
+  hash.has_key?(:test)
+  hash.has_value?(value)
   ```
 
 * <a name="hash-each"></a>
