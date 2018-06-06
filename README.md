@@ -1266,7 +1266,7 @@ condition](#safe-assignment-in-condition).
   ```
 
 * <a name="no-explicit-return"></a>
-  Avoid `return` where not required for flow of control.
+  Avoid `return` where not required for flow of control. For multi-line methods where the last line's return is significant, use the `return` keyword to make it explicit.
 <sup>[[link](#no-explicit-return)]</sup>
 
   ```Ruby
@@ -1278,6 +1278,13 @@ condition](#safe-assignment-in-condition).
   # good
   def some_method(some_arr)
     some_arr.size
+  end
+  
+  # good
+  def some_method(some_arr)
+    some_arr.reverse
+    some_arr[2] = "foo"
+    return some_important_method some_arr
   end
   ```
 
