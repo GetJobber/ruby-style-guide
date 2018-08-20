@@ -1,11 +1,5 @@
 # See all descriptions at this link
 # https://www.rubydoc.info/gems/rubocop/RuboCop
-AllCops:
-  TargetRubyVersion: 2.3
-
-require: ./lib/rubocop/custom_cops
-
-# These are all the cops that are enabled in the default configuration.
 
 # Indent private/protected/public as deep as method definitions
 Layout/AccessModifierIndentation:
@@ -763,21 +757,20 @@ Metrics/PerceivedComplexity:
 ### Warnings
 
 Lint/AmbiguousOperator:
-  Description: >-
-                 Checks for ambiguous operators in the first argument of a
-                 method invocation without parentheses.
   Enabled: false
 
+# TODO: 2018/08/20 Discuss at next style guide meeting
+# Pretty sure we want to enable?
 Lint/AmbiguousRegexpLiteral:
-  Description: >-
-                 Checks for ambiguous regexp literals in the first argument of
-                 a method invocation without parenthesis.
   Enabled: false
 
+# TODO: 2018/08/20 Discuss at next style guide meeting
+# VERY sure we want to enable this rule
 Lint/AssignmentInCondition:
-  Description: "Don't use assignment in conditions."
   Enabled: false
   AllowSafeAssignment: true
+
+################ Things below this are not reviewed/corrected ########
 
 Layout/BlockAlignment:
   Description: 'Align block ends correctly.'
@@ -787,10 +780,6 @@ Layout/ConditionPosition:
   Description: 'Checks for condition placed in a confusing position relative to the keyword.'
   Enabled: false
 
-Lint/Debugger:
-  Description: 'Check for debugger calls.'
-  Enabled: true
-
 Layout/DefEndAlignment:
   Description: 'Align ends corresponding to defs correctly.'
   Enabled: true
@@ -799,10 +788,6 @@ Layout/DefEndAlignment:
   # calls like `private`, `public`, etc, if present in front of the `def`
   # keyword on the same line.
   EnforcedStyleAlignWith: start_of_line
-
-Lint/DeprecatedClassMethods:
-  Description: 'Check for deprecated class method calls.'
-  Enabled: true
 
 Lint/ElseLayout:
   Description: 'Check for odd code arrangement in an else block.'
