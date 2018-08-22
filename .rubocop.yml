@@ -804,30 +804,14 @@ Lint/DeprecatedClassMethods:
   Description: 'Check for deprecated class method calls.'
   Enabled: true
 
-Lint/ElseLayout:
-  Description: 'Check for odd code arrangement in an else block.'
-  Enabled: false
 
-Lint/EmptyEnsure:
-  Description: 'Checks for empty ensure block.'
-  Enabled: true
 
-Lint/EmptyInterpolation:
-  Description: 'Checks for empty string interpolation.'
-  Enabled: true
+################ Things below this are not reviewed/corrected ########
 
 Layout/EndAlignment:
   Description: 'Align ends correctly.'
   Enabled: true
   EnforcedStyleAlignWith: keyword
-
-Lint/EndInMethod:
-  Description: 'END blocks should not be placed inside method definitions.'
-  Enabled: true
-
-Lint/EnsureReturn:
-  Description: 'Never use return in an ensure block.'
-  Enabled: true
 
 Lint/HandleExceptions:
   Description: "Don't suppress exception."

@@ -770,6 +770,27 @@ By the way, if you're into Rails you might want to check out the complementary
   end
   ```
 
+* <a name="else-layout"></a>
+  Avoid having part of an expression on the same line as the else keyword.
+<sup>[[link](#else-layout)]</sup>
+
+  ```Ruby
+  # bad
+  if something
+    # ...
+  else do_this
+    do_that
+  end
+
+  # good
+  if something
+    # ...
+  else
+    do_this
+    do_that
+  end
+  ```
+
 * <a name="ternary-operator"></a>
   Favor the ternary operator(`?:`) over `if/then/else/end` constructs.
   It's more common and obviously more concise.
