@@ -813,10 +813,6 @@ Layout/EndAlignment:
   Enabled: true
   EnforcedStyleAlignWith: keyword
 
-Lint/HandleExceptions:
-  Description: "Don't suppress exception."
-  Enabled: true
-
 Lint/LiteralAsCondition:
   Description: 'Checks of literals used in conditions.'
   Enabled: false
