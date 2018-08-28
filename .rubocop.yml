@@ -813,20 +813,6 @@ Layout/EndAlignment:
   Enabled: true
   EnforcedStyleAlignWith: keyword
 
-Lint/LiteralAsCondition:
-  Description: 'Checks of literals used in conditions.'
-  Enabled: false
-
-Lint/LiteralInInterpolation:
-  Description: 'Checks for literals used in interpolation.'
-  Enabled: false
-
-Lint/Loop:
-  Description: >-
-                 Use Kernel#loop with break rather than begin/end/until or
-                 begin/end/while for post-loop tests.
-  Enabled: true
-
 Lint/ParenthesesAsGroupedExpression:
   Description: >-
                  Checks for method calls with a space before the opening
