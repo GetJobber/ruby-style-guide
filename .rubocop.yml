@@ -849,16 +849,6 @@ Lint/Loop:
 
 ################ Things below this are not reviewed/corrected ########
 
-Lint/RequireParentheses:
-  Description: >-
-                 Use parentheses in the method call to avoid confusion
-                 about precedence.
-  Enabled: false
-
-Lint/RescueException:
-  Description: 'Avoid rescuing the Exception class.'
-  Enabled: true
-
 Lint/ShadowingOuterLocalVariable:
   Description: >-
                  Do not use the same name as outer local variable
