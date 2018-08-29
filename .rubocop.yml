@@ -847,11 +847,7 @@ Lint/Loop:
                  begin/end/while for post-loop tests.
   Enabled: true
 
-Lint/ParenthesesAsGroupedExpression:
-  Description: >-
-                 Checks for method calls with a space before the opening
-                 parenthesis.
-  Enabled: true
+################ Things below this are not reviewed/corrected ########
 
 Lint/RequireParentheses:
   Description: >-
