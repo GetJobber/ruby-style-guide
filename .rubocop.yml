@@ -863,10 +863,6 @@ Lint/RescueException:
   Description: 'Avoid rescuing the Exception class.'
   Enabled: true
 
-Lint/Void:
-  Description: 'Possible use of operator/literal/variable in void context.'
-  Enabled: false
-
 Security/Eval:
   Description: 'The use of eval represents a serious security risk.'
   Enabled: true
