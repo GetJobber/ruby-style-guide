@@ -759,17 +759,6 @@ Metrics/PerceivedComplexity:
 Lint/AmbiguousOperator:
   Enabled: false
 
-# TODO: 2018/08/20 Discuss at next style guide meeting
-# Pretty sure we want to enable?
-Lint/AmbiguousRegexpLiteral:
-  Enabled: false
-
-# TODO: 2018/08/20 Discuss at next style guide meeting
-# VERY sure we want to enable this rule
-Lint/AssignmentInCondition:
-  Enabled: false
-  AllowSafeAssignment: true
-
 ################ Things below this are not reviewed/corrected ########
 
 Layout/BlockAlignment:
