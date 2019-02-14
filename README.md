@@ -3103,7 +3103,7 @@ resource cleanup when possible.
 <sup>[[link](#no-mutable-keys)]</sup>
 
 * <a name="hash-literals"></a>
-  Always use the Hash Rocket ( => ) syntax
+  Prefer modern hash syntax but do not mix and match.
 <sup>[[link](#hash-literals)]</sup>
 
   ```Ruby
