@@ -3103,15 +3103,18 @@ resource cleanup when possible.
 <sup>[[link](#no-mutable-keys)]</sup>
 
 * <a name="hash-literals"></a>
-  Always use the Hash Rocket ( => ) syntax
+  Prefer modern hash syntax but do not mix and match.
 <sup>[[link](#hash-literals)]</sup>
 
   ```Ruby
   # bad
-  hash = {one: 1, two: 2, three: 3}
+  hash = {one: 1, :two => 2, three: 3}
 
   # good
   hash = {:one => 1, :two => 2, :three => 3}
+
+  # better
+  hash = {one: 1, two: 2, three: 3}
   ```
 
 * <a name="hash-key"></a>
