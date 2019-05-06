@@ -530,9 +530,9 @@ By the way, if you're into Rails you might want to check out the complementary
     empty line between the comment block and the `def`.
 <sup>[[link](#rdoc-conventions)]</sup>
 
-* <a name="80-character-limits"></a>
-  Limit lines to 80 characters.
-<sup>[[link](#80-character-limits)]</sup>
+* <a name="line-character-limits"></a>
+  Limit lines to 200 characters.
+<sup>[[link](#line-character-limits)]</sup>
 
 * <a name="no-trailing-whitespace"></a>
   Avoid trailing whitespace.
